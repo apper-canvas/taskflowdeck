@@ -1,11 +1,14 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import ApperIcon from '../components/ApperIcon';
+import ApperIcon from '@/components/ApperIcon';
+import Text from '@/components/atoms/Text';
+import Button from '@/components/atoms/Button';
 
-const NotFound = () => {
+const NotFoundContent = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-background">
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="text-center"
@@ -16,11 +19,11 @@ const NotFound = () => {
         >
           <ApperIcon name="FileQuestion" className="w-24 h-24 text-surface-300 mx-auto mb-6" />
         </motion.div>
-        <h1 className="text-4xl font-heading font-bold text-surface-900 mb-4">Page Not Found</h1>
-        <p className="text-surface-600 mb-8">
+        <Text as="h1" className="text-4xl font-heading font-bold text-surface-900 mb-4">Page Not Found</Text>
+        <Text as="p" className="text-surface-600 mb-8">
           The page you're looking for doesn't exist or has been moved.
-        </p>
-        <Link 
+        </Text>
+        <Link
           to="/"
           className="inline-flex items-center space-x-2 px-6 py-3 bg-primary text-white rounded-lg hover:bg-secondary transition-colors"
         >
@@ -32,4 +35,4 @@ const NotFound = () => {
   );
 };
 
-export default NotFound;
+export default NotFoundContent;
